@@ -5,7 +5,7 @@ steps:
     args: [
       'build',
       '-t',
-      'us-central1-docker.pkg.dev/my-gcp-project/todo-repo/todo-app',
+      'us-central1-docker.pkg.dev/watchful-net-455704-i0/todo-repo/todo-app',
       '.'
     ]
 
@@ -14,8 +14,8 @@ steps:
     id: Push
     args: [
       'push',
-      'us-central1-docker.pkg.dev/my-gcp-project/todo-repo/todo-app'
+      'us-central1-docker.pkg.dev/watchful-net-455704-i0/todo-repo/todo-app'
     ]
 
 images:
-  - 'us-central1-docker.pkg.dev/my-gcp-project/todo-repo/todo-app'
+  - 'us-central1-docker.pkg.dev/watchful-net-455704-i0/todo-repo/todo-app'
