@@ -1,0 +1,21 @@
+steps:
+  # Step 1: Build Docker image from source
+  - name: 'gcr.io/cloud-builders/docker'
+    id: Build
+    args: [
+      'build',
+      '-t',
+      'us-central1-docker.pkg.dev/my-gcp-project/todo-repo/todo-app',
+      '.'
+    ]
+
+  # Step 2: Push image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    id: Push
+    args: [
+      'push',
+      'us-central1-docker.pkg.dev/my-gcp-project/todo-repo/todo-app'
+    ]
+
+images:
+  - 'us-central1-docker.pkg.dev/my-gcp-project/todo-repo/todo-app'
