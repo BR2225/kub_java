@@ -1,5 +1,5 @@
 steps:
-  # Step 1: Build Docker image from source
+  # Step 1: Build Docker image
   - name: 'gcr.io/cloud-builders/docker'
     id: Build
     args: [
@@ -9,7 +9,7 @@ steps:
       '.'
     ]
 
-  # Step 2: Push image to Artifact Registry
+  # Step 2: Push Docker image
   - name: 'gcr.io/cloud-builders/docker'
     id: Push
     args: [
@@ -18,5 +18,6 @@ steps:
     ]
 
 images:
-  - us-central1-docker.pkg.dev/your-gcp-project/todo-repo/kub-java
+  - us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java
+
 
