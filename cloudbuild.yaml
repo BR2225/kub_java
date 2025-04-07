@@ -28,7 +28,7 @@ options:
   logging: GCS_ONLY
 
 # Use your Cloud Build service account
-serviceAccount: 
+serviceAccount: '# ✅ Specify the GCS bucket for logs
 logsBucket: gs://build-logs-watchful/
 
 # Set logging behavior
