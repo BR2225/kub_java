@@ -2,38 +2,25 @@ steps:
   # Step 1: Build Docker image
   - name: 'gcr.io/cloud-builders/docker'
     id: Build
-    args: [
-      'build',
-      '-t',
-      'us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java',
-      '.'
-    ]
+    args:
+      - build
+      - -t
+      - us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java
+      - .
 
   # Step 2: Push Docker image
   - name: 'gcr.io/cloud-builders/docker'
     id: Push
-    args: [
-      'push',
-      'us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java'
-    ]
+    args:
+      - push
+      - us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java
 
 images:
   - us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java
 
-#  Specify the GCS bucket for logs
 logsBucket: gs://build-logs-watchful/
 
-# Set logging behavior
 options:
   logging: GCS_ONLY
 
-# Use your Cloud Build service account
-serviceAccount: '# ✅ Specify the GCS bucket for logs
-logsBucket: gs://build-logs-watchful/
-
-# Set logging behavior
-options:
-  logging: GCS_ONLY
-
-# Use your Cloud Build service account
-serviceAccount: '123456789012@cloudbuild.gserviceaccount.com'    
+serviceAccount: '123456789012@cloudbuild.gserviceaccount.com'
