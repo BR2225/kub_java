@@ -28,12 +28,12 @@ options:
   logging: GCS_ONLY
 
 # Use your Cloud Build service account
-serviceAccount: '# ✅ Specify the GCS bucket for logs
+serviceAccount: 
 logsBucket: gs://build-logs-watchful/
 
-# ✅ Set logging behavior
+# Set logging behavior
 options:
   logging: GCS_ONLY
 
-# ✅ Use your Cloud Build service account
+# Use your Cloud Build service account
 serviceAccount: '123456789012@cloudbuild.gserviceaccount.com'    
