@@ -20,4 +20,20 @@ steps:
 images:
   - us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java
 
+#  Specify the GCS bucket for logs
+logsBucket: gs://build-logs-watchful/
 
+# Set logging behavior
+options:
+  logging: GCS_ONLY
+
+# Use your Cloud Build service account
+serviceAccount: '# ✅ Specify the GCS bucket for logs
+logsBucket: gs://build-logs-watchful/
+
+# ✅ Set logging behavior
+options:
+  logging: GCS_ONLY
+
+# ✅ Use your Cloud Build service account
+serviceAccount: '123456789012@cloudbuild.gserviceaccount.com'    
