@@ -1,7 +1,7 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     id: Build
-    dir: The-Best-Todo-App-master
+   
     args: [
       'build',
       '-t',
