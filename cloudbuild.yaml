@@ -5,7 +5,7 @@ steps:
     args: [
       'build',
       '-t',
-      'us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java',
+      'us-central1-docker.pkg.dev/inductive-gift-456306-h4/kub-java/kub-java',
       '.'
     ]
 
@@ -13,11 +13,11 @@ steps:
     id: Push
     args: [
       'push',
-      'us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java'
+      'us-central1-docker.pkg.dev/winductive-gift-456306-h4/kub-java/kub-java'
     ]
 
 images:
-  - us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java
+  - us-central1-docker.pkg.dev/inductive-gift-456306-h4/kub-java/kub-java
 
 logsBucket: gs://build-logs-watchful-1/
 
