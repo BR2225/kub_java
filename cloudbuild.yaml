@@ -24,4 +24,3 @@ logsBucket: gs://build-logs-watchful/
 options:
   logging: GCS_ONLY
 
-serviceAccount: '1093121357596@cloudbuild.gserviceaccount.com'
