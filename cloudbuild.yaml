@@ -19,7 +19,7 @@ steps:
 images:
   - us-central1-docker.pkg.dev/watchful-net-455704-i0/kub-java/kub-java
 
-logsBucket: gs://build-logs-watchful/
+logsBucket: gs://build-logs-watchful-1/
 
 options:
   logging: GCS_ONLY
