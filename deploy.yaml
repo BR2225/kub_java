@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kub-java-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kub-java
+  template:
+    metadata:
+      labels:
+        app: kub-java
+    spec:
+      containers:
+      - name: kub-java
+        image: us-central1-docker.pkg.dev/inductive-gift-456306-h4/kub-java/kub-java
+        ports:
+        - containerPort: 8080
+        env:
+        - name: HTTP_PORT
+          value: "8080"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: username
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: password
+        - name: DB_URL
+          value: "jdbc:postgresql://db-service:5555/todo-app"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kub-java-service
+spec:
+  selector:
+    app: kub-java
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer

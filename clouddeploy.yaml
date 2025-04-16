@@ -1,0 +1,33 @@
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: kub-java-pipeline
+description: Pipeline to deploy Java application to GKE
+serialPipeline:
+  stages:
+  - targetId: gke-prod
+    profiles: []
+---
+
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: gke-prod
+description: Production GKE cluster
+gke:
+  cluster: projects/inductive-gift-456306-h4/locations/us-central1/clusters/your-gke-cluster-name
+---
+
+apiVersion: deploy.cloud.google.com/v1
+kind: Release
+metadata:
+  name: kub-java-release
+description: Release for Java application
+targetId: gke-prod
+build:
+  artifacts:
+    images:
+      app: us-central1-docker.pkg.dev/inductive-gift-456306-h4/kub-java/kub-java
+  renderingData:
+    defaultRender:
+      renderingTemplate: deploy.yaml
