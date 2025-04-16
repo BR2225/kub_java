@@ -15,7 +15,7 @@ metadata:
   name: gke-prod
 description: Production GKE cluster
 gke:
-  cluster: projects/inductive-gift-456306-h4/locations/us-central1/clusters/your-gke-cluster-name
+  cluster: projects/inductive-gift-456306-h4/locations/us-central1/clusters/kub-java-cluster-1
 ---
 
 apiVersion: deploy.cloud.google.com/v1
